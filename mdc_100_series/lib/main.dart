@@ -12,8 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
 
-void main() => runApp(const ShrineApp());
+void main() {
+  // debugPaintSizeEnabled = true;
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const ShrineApp(), // Wrap your app
+    ),
+  );
+}

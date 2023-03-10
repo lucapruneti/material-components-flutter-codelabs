@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -25,6 +26,8 @@ class ShrineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
+      useInheritedMediaQuery: true,
+      builder: DevicePreview.appBuilder,
       initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => const LoginPage(),
